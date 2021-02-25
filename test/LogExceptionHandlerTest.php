@@ -22,7 +22,7 @@ final class LogExceptionHandlerTest extends TestCase
         $handler->handleException($e);
         $output = ob_get_clean();
 
-        $output = explode("\r\n", $output);
+        $output = explode(PHP_EOL, $output);
 
         $this->assertEquals("[E]=============================================================", $output[0]);
         $this->assertEquals("Exception stack trace", $output[1]);
